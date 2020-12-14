@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+</head>
+<body>
+    <div>
+        <form action="javascript:void(0);" method="post" id="f1" onsubmit="add()">
+            
+            <input type="text" name="title" placeholder="Title"><br><br>
+            <!-- <input type="textarea" placeholder="add notes"> -->
+            <textarea id="txtArea" name="description" placeholder="add notes" rows="5" cols="30"></textarea><br><br>
+            <input type="submit" value="Add" />
+        </form>
+        <!-- <button onclick="add()">Submit</button> -->
+        <button onclick="view()">View</button>
+        
+    </div>
+    <div id="spoiler" style="display: none;" role="aria-hidden">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+        <input type="text" id="edit-title">
+        <textarea name="" id="edit-description" cols="30" rows="10"></textarea>
+        <input type="submit" value="Update" /> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+    
+    <h3 id="empty"></h3>
+    <h3 id="del"></h3>
+
+    <!--<span id="sp1">123</span>
+    <p id="p1">this</p> -->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./note.js"></script>
+    <script src="./app.js"></script>
+
+</body>
+</html>
