@@ -1,0 +1,17 @@
+.forms{
+    background-color: rgb(196, 195, 195);
+    border: 1px solid gray;
+    height: 220px;
+    width: 270px;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 480px;
+}
+
+.msg1{
+    margin-left: 600px;
+}
+
+.msg2{
+    margin-left: 550px;
+}

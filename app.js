@@ -1,17 +1,21 @@
+
 var title = document.forms["f1"]["title"];
 var description = document.forms["f1"]["description"];
 var notes = [];
 var note = new Note("", "");
+
 function add(){
     note = new Note(title.value, description.value);
     notes[0] = note;
     view();
 }
-var $data = $('<div></div>')
+var $data = $('<div class="msg1"></div>')
+
 function view(){
     //$data.css('display', 'none')
     $('#empty').text("");
     $('#del').text("");
+    $data.text("");
     if(note.title!==""){
         var $title = $('<div></div>');
         var $description = $('<div></div>');
@@ -22,13 +26,13 @@ function view(){
         $title.text(note.title);
         $description.text(note.description);
         $dbtn.text("delete");
-            $dbtn.click(function deleteNote(){
-                console.log("Deleted"); 
-                notes.splice(0,1);
-                note.title = "";
-                note.description = "";
-                deleted();
-            })
+        $dbtn.click(function deleteNote(){
+            console.log("Deleted"); 
+            notes.splice(0,1);
+            note.title = "";
+            note.description = "";
+            deleted();
+        })
         $ebtn.text("edit");
         $ebtn.click(function editNote(){
             console.log("Edited");
@@ -40,8 +44,10 @@ function view(){
             var $edescription = $('#edit-description');
             $edescription.val(note.description);
             
-            document.getElementById('spoiler').style.display = 'block';
-            document.getElementById('saveEdit').onsubmit = function() {
+            //document.getElementById('spoiler').style.display = 'block';
+            $('#spoiler').css('display', 'block');
+            //document.getElementById('saveEdit').onsubmit = function() {
+            $('#saveEdit').on('submit', function(){
 
                 //allNotes[i].title = $etitle.val;
                 //allNotes[i].description = edescription.value;
@@ -58,7 +64,7 @@ function view(){
                 //     view();
                 //     CloseInput();
                 // }
-            }  
+            })
         })
         
         $data.append($title);
